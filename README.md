@@ -127,8 +127,7 @@ The angular CLI (Command Line Interface) helps create and manage Angular project
 5. **Transfer the Docker Image to Raspberry Pi**
    * Use SCP (Secure Copy Protocol) to transfer the image to your Raspberry Pi (for example):
    ```
-   scp -i ".\eka_privatekey_openssh" chatbotapp-arm.tar cmb@192.168.88.100:/home/cmb/Docker
-chatbotapp-arm.tar
+   scp -i ".\eka_privatekey_openssh" chatbotapp-arm.tar cmb@192.168.88.100:/home/cmb/Docker chatbotapp-arm.tar
    ```
 6. **Load Docker Image on Raspberry Pi**
    * SSH to Raspberry Pi:
