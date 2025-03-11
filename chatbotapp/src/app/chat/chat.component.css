@@ -1,0 +1,150 @@
+.chat-container {
+  width: 80vw;
+  min-width: 600px;
+  margin: 100px auto 20px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.chat-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.chat-history {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  line-height: 1.5;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  display: block;
+  max-width: 90%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: #f1f1f1;
+}
+
+.user-message {
+  background-color: #d1e7dd;
+}
+
+.bot-message {
+  background-color: #f8d7da;
+}
+
+.code-block {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: auto;
+  margin-top: 5px;
+}
+
+.chat-input-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-input {
+  width: 80%;
+  height: 60px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  resize: none;
+  line-height: 1.5;
+}
+
+.send-button {
+  width: 15%;
+  height: 60px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
+
+.typing-indicator {
+  font-style: italic;
+  color: #888;
+  margin-top: 5px;
+}
+
+.stop-button {
+  width: 15%;
+  height: 60px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 5px;
+}
+
+.stop-button:hover {
+  background-color: #c82333;
+}
+
+.processing-indicator {
+  font-style: italic;
+  color: #888;
+  margin-top: 5px;
+}
+
+.dots {
+  display: inline-block;
+  width: 1em;
+  text-align: left;
+}
+
+.dots::after {
+  content: '...';
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow:
+      .25em 0 0 rgba(0, 0, 0, 0),
+      .5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: #888;
+    text-shadow:
+      .25em 0 0 rgba(0, 0, 0, 0),
+      .5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow:
+      .25em 0 0 #888,
+      .5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%, 100% {
+    text-shadow:
+      .25em 0 0 #888,
+      .5em 0 0 #888;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="chat-container">
+  <h1 class="chat-title">DeepChatGPT</h1>
+  <div class="chat-history">
+    <div *ngFor="let message of conversationHistory" class="message" [ngClass]="{'user-message': message.role === 'user', 'bot-message': message.role === 'assistant'}">
+      <strong>{{ message.role === 'user' ? 'You' : 'Bot' }}:</strong>
+      <ng-container *ngIf="message.isCode; else normalText">
+        <pre class="code-block">{{ message.content }}</pre>
+      </ng-container>
+      <ng-template #normalText>
+        <span>{{ message.content }}</span>
+      </ng-template>
+    </div>
+    <div *ngIf="isProcessing && !isTyping" class="processing-indicator">Processing<span class="dots">...</span></div>
+    <div *ngIf="isTyping" class="typing-indicator">Bot is typing...</div>
+  </div>
+  <div class="chat-input-area">
+    <textarea [(ngModel)]="userInput"
+              placeholder="Type your message here..."
+              class="chat-input"
+              (keydown)="handleKeyDown($event)"></textarea>
+    <button *ngIf="userInput.trim()" (click)="sendMessage()" class="send-button">Send</button>
+    <button *ngIf="isTyping" (click)="stopTypingEffect()" class="stop-button">Stop</button>
+  </div>
+</div>
